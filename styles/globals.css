@@ -1111,6 +1111,8 @@ ul li{
   margin-bottom: 1rem;
     width: 18%;
     padding: 6px 0;
+    background: black!important;
+    color: white!important;
 }
 
 
@@ -1862,4 +1864,7 @@ textarea {
     width: 89%;
   }
 
+}
+.uc{
+  text-transform: uppercase;
 }

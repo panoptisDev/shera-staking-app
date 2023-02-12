@@ -17,6 +17,7 @@ import { parse } from "path";
 
 import StakeFunction from "./stakeFunction";
 import { NFT } from "@thirdweb-dev/sdk";
+import { text } from "stream/consumers";
 // import console from "console";
 
 const GetTokenId: NextPage = () => {
@@ -39,7 +40,7 @@ const GetTokenId: NextPage = () => {
 
 
     const nftDropContractAddress = "0x68225df7c4df4d82ded8478daa74c2138da1f85b";
-    const stakingContractAddress = "0x9c8BD882dF4e5DC860a3571E1a9aAbB50b29Ba46";
+    const stakingContractAddress = "0x272E4D319CD8d63d3FE882E091f11059c15183F3";
 
     const nftCatContractAddress = "0x551c03246cc1d5e276f2dc264253decfa9b011c6";
     const nftHorseContractAddress = "0xd8bc0d91c5f0a17dd2c013e9211ff6fe1872e340";
@@ -68,7 +69,7 @@ const GetTokenId: NextPage = () => {
 
 
     const { contract } = useContract(
-        "0x9c8BD882dF4e5DC860a3571E1a9aAbB50b29Ba46"
+        "0x272E4D319CD8d63d3FE882E091f11059c15183F3"
     );
 
     // const { data, isLoading } = useContractRead(contract, "tokenByIndex", inputval)
@@ -81,7 +82,7 @@ const GetTokenId: NextPage = () => {
 
 
     const { contract: stakeContract } = useContract(
-        "0x9c8BD882dF4e5DC860a3571E1a9aAbB50b29Ba46"
+        "0x272E4D319CD8d63d3FE882E091f11059c15183F3"
     );
 
 
@@ -208,7 +209,7 @@ const GetTokenId: NextPage = () => {
 
     return (
         <div>
-            <h2>Stake Your NFTs</h2>
+            <h2 className="uc">Stake Your Unstaked NFTs</h2>
 
             <select value={selectval} onChange={e => setselectval(e.target.value)} className='select'>
                 <option value="0xd8bc0d91c5f0a17dd2c013e9211ff6fe1872e340">Shera Horse</option>
@@ -220,7 +221,7 @@ const GetTokenId: NextPage = () => {
             {/* ------   for anstronat ---- */}
             {selectval === "0x68225df7c4df4d82ded8478daa74c2138da1f85b" ? (
                 <>
-                    <h2>Your Unstaked NFTs</h2>
+                    {/* <h2>Your Unstaked NFTs</h2> */}
                     <div className={styles.nftBoxGrid}>
                         {ownedNfts?.map((nft) => (
                             <div className={styles.nftBox} key={nft.metadata.id.toString()}>
@@ -255,7 +256,7 @@ const GetTokenId: NextPage = () => {
 
             {selectval === "0xd8bc0d91c5f0a17dd2c013e9211ff6fe1872e340" ? (
                 <>
-                    <h2>Your Unstaked NFTs</h2>
+                    {/* <h2>Your Unstaked NFTs</h2> */}
                     <div className={styles.nftBoxGrid}>
                         {ownedHorseNfts?.map((nft) => (
                             <div className={styles.nftBox} key={nft.metadata.id.toString()}>
@@ -289,7 +290,7 @@ const GetTokenId: NextPage = () => {
 
             {selectval === "0x551c03246cc1d5e276f2dc264253decfa9b011c6" ? (
                 <>
-                    <h2>Your Unstaked NFTs</h2>
+                    {/* <h2>Your Unstaked NFTs</h2> */}
                     <div className={styles.nftBoxGrid}>
                         {ownedCatNfts?.map((nft) => (
                             <div className={styles.nftBox} key={nft.metadata.id.toString()}>
@@ -317,7 +318,7 @@ const GetTokenId: NextPage = () => {
 
             {selectval === "0xe19351a63a094abfc33d12cd1732f7fdd595b520" ? (
                 <>
-                    <h2>Your Unstaked NFTs</h2>
+                    {/* <h2>Your Unstaked NFTs</h2> */}
                     <div className={styles.nftBoxGrid}>
                         {ownedBearNfts?.map((nft) => (
                             <div className={styles.nftBox} key={nft.metadata.id.toString()}>
