@@ -11,7 +11,7 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       {/* Top Section */}
-      <h1 className={styles.h1}>Shera NFT -  Stake Your NFT</h1>
+      <h1 className={styles.h1}>SHERA NFT -  STAKE YOUR NFT</h1>
       <div className={styles.nftBoxGrid + " " + styles.nftBoxGrid11}>
         <a
           className={styles.optionSelectBox}
@@ -19,8 +19,8 @@ const Home: NextPage = () => {
           href="https://shera-minting.vercel.app/"
         // onClick={() => router.push(`/mint`)}
         >
-          <img src="https://nftify-platform-resized.s3-ap-southeast-1.amazonaws.com/l-img-preview/62d170f22994a0bed7213b80-1659096241663-rc-upload-1659096158626-25.png" className={styles.mintImg} alt="drop" width={200} height={200} />
-          <h2 className={styles.selectBoxTitle}>Mint an NFT</h2>
+          <img src="https://gateway.pinata.cloud/ipfs/QmS4X6DUDwv1n7PhKqzBvzKaqi9tkYLbefXFhYHk1zkwXR?_gl=1*k7duju*_ga*MTM0NzM3MDM2OC4xNjczNjQ0MzY4*_ga_5RMPXG14TE*MTY3NjQ4MzA2NS4xMC4xLjE2NzY0ODMwODIuNDMuMC4w" className={styles.mintImg} alt="drop" width={150} height={150} />
+          <h2 className={styles.selectBoxTitle}>MINT AN NFT</h2>
           <p className={styles.selectBoxDescription}>
             Claim Your Shera NFT Here
           </p>
@@ -32,8 +32,8 @@ const Home: NextPage = () => {
           onClick={() => router.push(`/stake`)}
         >
           {/* Staking an NFT */}
-          <img src="https://nftify-platform-resized.s3-ap-southeast-1.amazonaws.com/l-img-preview/62d170f22994a0bed7213b80-1659096241663-rc-upload-1659096158626-25.png" className={styles.mintImg} alt="drop" width={200} height={200} />
-          <h2 className={styles.selectBoxTitle}>Stake Your NFTs</h2>
+          <img src="https://gateway.pinata.cloud/ipfs/QmS4X6DUDwv1n7PhKqzBvzKaqi9tkYLbefXFhYHk1zkwXR?_gl=1*k7duju*_ga*MTM0NzM3MDM2OC4xNjczNjQ0MzY4*_ga_5RMPXG14TE*MTY3NjQ4MzA2NS4xMC4xLjE2NzY0ODMwODIuNDMuMC4w" className={styles.mintImg} alt="drop" width={150} height={150} />
+          <h2 className={styles.selectBoxTitle}>STAKE YOUR NFTS</h2>
           <p className={styles.selectBoxDescription}>
             Stake Your Shera NFT Here
           </p>

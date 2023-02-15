@@ -20,6 +20,8 @@ import GetTokenId from "./getTokenId";
 
 import { useRef } from "react";
 
+// import { ConnectWallet } from "@thirdweb-dev/react";
+
 const nftDropContractAddress = "0x68225df7c4df4d82ded8478daa74c2138da1f85b";
 
 const stakingContractAddress = "0x272E4D319CD8d63d3FE882E091f11059c15183F3";
@@ -29,9 +31,9 @@ const nftHorseContractAddress = "0xd8bc0d91c5f0a17dd2c013e9211ff6fe1872e340";
 const nftBearContractAddress = "0xe19351a63a094abfc33d12cd1732f7fdd595b520";
 
 const Stake: NextPage = () => {
-  const [claimableRewards1, setClaimableRewards1] = useState < BigNumber > ();
+  const [claimableRewards1, setClaimableRewards1] = useState<BigNumber>();
 
-  const [selectval, setselectval] = useState < string > ("0x68225df7c4df4d82ded8478daa74c2138da1f85b");
+  const [selectval, setselectval] = useState<string>("0x68225df7c4df4d82ded8478daa74c2138da1f85b");
 
   const connectWithMetamask = useMetamask();
   const address = useAddress();
@@ -69,13 +71,15 @@ const Stake: NextPage = () => {
   const { data: ownedHorseNfts } = useOwnedNFTs(nftHorseDropContract, address);
   const { data: ownedBearNfts } = useOwnedNFTs(nftBearDropContract, address);
 
-  const [stakedNfts, setStakedNfts] = useState < any > ([]);
+  const [stakedNfts, setStakedNfts] = useState<any>([]);
 
-  const [stakedHorseNfts, setStakedHorseNfts] = useState < any > ([]);
-  const [stakedCatNfts, setStakedCatNfts] = useState < any > ([]);
-  const [stakedBearNfts, setStakedBearNfts] = useState < any > ([]);
+  const [stakedHorseNfts, setStakedHorseNfts] = useState<any>([]);
+  const [stakedCatNfts, setStakedCatNfts] = useState<any>([]);
+  const [stakedBearNfts, setStakedBearNfts] = useState<any>([]);
 
-  const [claimableRewards, setClaimableRewards] = useState < BigNumber > ();
+  const [claimableRewards, setClaimableRewards] = useState<BigNumber>();
+
+  const [multiplyValue, setmultiplyValue] = useState<BigNumber>();
 
 
 
@@ -203,9 +207,13 @@ const Stake: NextPage = () => {
     if (!contract || !address) return;
 
     async function loadClaimableRewards() {
-      const cr = await contract?.call("availableRewards", address);
+      var cr = await contract?.call("availableRewards", address);
+      // cr = cr * 100;
+      // cr = cr.toString();
       console.log("Loaded claimable rewards", cr);
       setClaimableRewards(cr);
+
+
     }
 
     loadClaimableRewards();
@@ -258,13 +266,16 @@ const Stake: NextPage = () => {
         <hr className={`${styles.divider} ${styles.spacerTop}`} />
 
         {!address ? (
-          <button
-            className={styles.mainButton}
-            id="autom"
-            onClick={connectWithMetamask}
-          >
-            Connect Wallet
-          </button>
+          <>
+            {/* <button
+              className={styles.mainButton}
+              id="autom"
+              onClick={connectWithMetamask}
+            >
+              Connect Wallet
+            </button> */}
+            <ConnectWallet accentColor="#f213a4" colorMode="dark" />
+          </>
         ) : (
           <>
             <h2>WALLET BALANCE</h2>
@@ -276,7 +287,11 @@ const Stake: NextPage = () => {
                   <b>
                     {!claimableRewards
                       ? "Loading..."
-                      : ethers.utils.formatUnits(claimableRewards, 18)}
+                      : ethers.utils.formatUnits(claimableRewards, 9)}
+                    {/* : ethers.utils.formatUnits(claimableRewards, 11)} */}
+                    {/* :
+                       ethers.utils.mul} */}
+                    {/* } */}
                   </b>{" "}
                   {/* {tokenBalance?.symbol} */}
                 </p>
@@ -319,7 +334,7 @@ const Stake: NextPage = () => {
             {/* ------   for anstronat ---- */}
             {selectval === "0x68225df7c4df4d82ded8478daa74c2138da1f85b" ? (
               <div className={styles.nftBoxGrid + " " + styles.imgcenter}>
-                {stakedNfts?.map((nft) => (
+                {stakedNfts?.map((nft: any) => (
                   <div className="console log" key="12">
                     {nft ? (
                       <div
@@ -357,7 +372,7 @@ const Stake: NextPage = () => {
             {/* ---- for horse ---- */}
             {selectval === "0xd8bc0d91c5f0a17dd2c013e9211ff6fe1872e340" ? (
               <div className={styles.nftBoxGrid + " " + styles.imgcenter}>
-                {stakedHorseNfts?.map((nft) => (
+                {stakedHorseNfts?.map((nft: any) => (
                   <div className="console log" key="12">
                     {nft ? (
                       <div
@@ -391,7 +406,7 @@ const Stake: NextPage = () => {
             {/* ---- for Cat ---- */}
             {selectval === "0x551c03246cc1d5e276f2dc264253decfa9b011c6" ? (
               <div className={styles.nftBoxGrid + " " + styles.imgcenter}>
-                {stakedCatNfts?.map((nft) => (
+                {stakedCatNfts?.map((nft: any) => (
                   <div className="console log" key="12">
                     {nft ? (
                       <div
@@ -423,7 +438,7 @@ const Stake: NextPage = () => {
             {/* ---- for Bear ---- */}
             {selectval === "0xe19351a63a094abfc33d12cd1732f7fdd595b520" ? (
               <div className={styles.nftBoxGrid + " " + styles.imgcenter}>
-                {stakedBearNfts?.map((nft) => (
+                {stakedBearNfts?.map((nft: any) => (
                   <div className="console log" key="12">
                     {nft ? (
                       <div
