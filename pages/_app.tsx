@@ -2,6 +2,7 @@ import type { AppProps } from "next/app";
 import { ChainId, ThirdwebProvider } from "@thirdweb-dev/react";
 import "../styles/globals.css";
 import { Header } from "../components/Header"
+import { Footer } from "../components/Footer"
 
 
 // This is the chainId your dApp will work on.
@@ -12,6 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ThirdwebProvider desiredChainId={activeChainId}>
       <Header />
       <Component {...pageProps} />
+      <Footer />
     </ThirdwebProvider>
   );
 }

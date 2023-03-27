@@ -245,7 +245,7 @@ const Stake: NextPage = () => {
   return (
     <>
       <Link href="/">
-        <div className="d-flex">
+        <div className="d-flex1">
           <Image src={BackIcon} className="asad" width={50} height={50} />
 
           <h3>Go To Dashboard</h3>

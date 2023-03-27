@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import { useContract, useContractRead } from "@thirdweb-dev/react";
 
 
-const Balanco: NextPage = () => {
+const Balanco: NextPage = (props: any) => {
     const address = useAddress();
 
 
@@ -23,6 +23,7 @@ const Balanco: NextPage = () => {
             const cr = await contract?.call("balanceOf", address);
             console.log("Loaded claimable rewards", cr);
             setClaimableRewards(cr);
+            // props.onValueChange()
         }
 
         getbalance_();
@@ -34,8 +35,7 @@ const Balanco: NextPage = () => {
         <div>
             {!claimableRewards
                 ? "Loading..."
-                : ethers.utils.formatUnits(claimableRewards, 9)
-
+                : props.onValueChange((ethers.utils.formatUnits(claimableRewards, 9)))
             }
 
         </div>
