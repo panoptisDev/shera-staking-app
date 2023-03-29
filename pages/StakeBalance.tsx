@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import { useContract, useContractRead } from "@thirdweb-dev/react";
 
 
-const Balanco: NextPage = (props: any) => {
+const StakeBalance: NextPage = () => {
     // const address = useAddress();
     const address = "0x64387D613e57D20bb4E0E3C33d9b4820C6E3c836";
 
@@ -35,11 +35,11 @@ const Balanco: NextPage = (props: any) => {
         <div>
             {!claimableRewards
                 ? "Loading..."
-                : props.onValueChange((ethers.utils.formatUnits(claimableRewards, 9)))
+                : (ethers.utils.formatUnits(claimableRewards, 9))
             }
 
         </div>
     )
 }
 
-export default Balanco;
+export default StakeBalance;

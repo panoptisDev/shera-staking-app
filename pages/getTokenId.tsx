@@ -209,15 +209,18 @@ const GetTokenId: NextPage = () => {
 
     return (
         <div>
-            <h2 className="uc">Stake Your Unstaked NFTs</h2>
+            <div className={styles.buttonContainer}>
+                <h2 className="uc">Stake Your Unstaked NFTs</h2>
+            </div>
 
-            <select value={selectval} onChange={e => setselectval(e.target.value)} className='select'>
-                <option value="0xd8bc0d91c5f0a17dd2c013e9211ff6fe1872e340">Shera Horse</option>
-                <option value="0x551c03246cc1d5e276f2dc264253decfa9b011c6">Shera Cat</option>
-                <option value="0x68225df7c4df4d82ded8478daa74c2138da1f85b">Shera Astra</option>
-                <option value="0xe19351a63a094abfc33d12cd1732f7fdd595b520">Shera Bear</option>
-            </select>
-
+            <div className={styles.buttonContainer}>
+                <select value={selectval} onChange={e => setselectval(e.target.value)} className='select'>
+                    <option value="0xd8bc0d91c5f0a17dd2c013e9211ff6fe1872e340">Shera Horse</option>
+                    <option value="0x551c03246cc1d5e276f2dc264253decfa9b011c6">Shera Cat</option>
+                    <option value="0x68225df7c4df4d82ded8478daa74c2138da1f85b">Shera Astra</option>
+                    <option value="0xe19351a63a094abfc33d12cd1732f7fdd595b520">Shera Bear</option>
+                </select>
+            </div>
             {/* ------   for anstronat ---- */}
             {selectval === "0x68225df7c4df4d82ded8478daa74c2138da1f85b" ? (
                 <>

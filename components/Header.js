@@ -1,8 +1,14 @@
 import React from "react";
+import { useRouter } from "next/router";
 
 import Navbar from "./Nav";
 
 export const Header = () => {
+  const router = useRouter();
+  function Chatbot() {
+    router.push("/ChatBot");
+  }
+
   return (
     <>
       <div className="main-header">
@@ -67,6 +73,14 @@ export const Header = () => {
                     </a>
                   </span>
                 </li>
+
+                <li className="ant-menu-item" tabIndex={-1}>
+                  <span className="ant-menu-title-content">
+                    <a className href="https://shera-market-nft.com/activity">
+                      <div>Activity</div>
+                    </a>
+                  </span>
+                </li>
                 {/* <li className="ant-menu-item" tabIndex={-1}>
                   <span className="ant-menu-title-content">
                     <a className href="https://shera-market-nft.com/airdrop">
@@ -76,13 +90,13 @@ export const Header = () => {
                     </a>
                   </span>
                 </li> */}
-                <li className="ant-menu-item" tabIndex={-1}>
+                {/* <li className="ant-menu-item" tabIndex={-1}>
                   <span className="ant-menu-title-content">
-                    <a className href="https://shera-market-nft.com/activity">
-                      <div>Activity</div>
-                    </a>
+                    <div className onClick={Chatbot}>
+                      <div className="chatbtn">ChatBot</div>
+                    </div>
                   </span>
-                </li>
+                </li> */}
               </ul>
               <div style={{ display: "none" }}></div>
               {/* <button color="var(--color_button_main_text)" background="var(--color_button_main_bg)" type="button" className="ant-btn dEQEDw theme-btn">

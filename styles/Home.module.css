@@ -320,6 +320,7 @@
   font-size: 1.75rem;
   margin-top: 8px;
   margin-bottom: 8px;
+  color: white;
 }
 
 .selectBoxDescription {
@@ -503,4 +504,13 @@
 .mintImg{
   /* width: 7rem; */
   padding-top: 12px!important;
+}
+
+.walletbalance{
+  text-align: center;
+}
+
+.buttonContainer{
+  display: flex;
+  justify-content: center;
 }

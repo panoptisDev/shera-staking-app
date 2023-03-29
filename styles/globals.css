@@ -716,9 +716,9 @@ input:not([type="range"]) {
   color: rgba(0, 0, 0, 0.85);
 }
 
-.ant-menu-horizontal .ant-menu-item a {
+.ant-menu-horizontal .ant-menu-item a,.chatbtn {
   font-size: 14px;
-  line-height: 21px;
+  /* line-height: 21px; */
   letter-spacing: 0.4px;
   font-weight: 500;
   color: var(--color_text_support);
@@ -2011,7 +2011,7 @@ button.Home_searchButton__RV6Zb img  {
 
 /* These were inline style tags. Uses id+class to override almost everything */
 #style-qOJRo.style-qOJRo {  
-   height: 168px !important;  
+   height: 84px !important;  
 }  
 #style-LMIUA.style-LMIUA {  
    color:transparent;  
@@ -4973,3 +4973,431 @@ span {
 .footer #style-Ehorh.style-Ehorh {  
    color:transparent;  
 }  
+/* --------- footer end --------- */
+
+ /* -------- Imager Gernator start -------- */
+ .card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+}
+
+.card {
+  background-color: #1c1c1c;
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  /* width: calc(25% - 15px); */
+  margin-bottom: 30px;
+}
+
+.card:hover {
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card .card-body {
+  padding: 10px;
+}
+
+.card h2 {
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 1024px) {
+  .card {
+    width: calc(33.33% - 20px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    width: calc(50% - 15px);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .card {
+    width: 100%;
+  }
+}
+
+
+.custom-search {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+}
+.custom-search-input {
+  width: 115%;
+  border: 1px solid #ccc;
+  border-radius: 100px;
+  padding: 10px 100px 10px 20px; 
+  line-height: 1;
+  box-sizing: border-box;
+  outline: none;
+}
+.custom-search-botton {
+  position: absolute;
+  right: -38px; 
+  top: 3px;
+  bottom: 3px;
+  border: 0;
+  background: #d1095e;
+  color: #fff;
+  outline: none;
+  margin: 0;
+  padding: 0 10px;
+  border-radius: 100px;
+  z-index: 2;
+}
+
+.b-img{
+  padding-bottom: 2rem;
+  margin-top: 7rem;
+}
+
+.card-body button{
+  margin-right: 10px;
+  padding: 7px;
+  border-radius: 5px;
+  background: white;
+  color: black;
+}
+
+.connect-wallet{
+  display: flex;
+  justify-content: center;
+  padding-top: 25%;
+  margin: auto;
+}
+
+.info{
+  text-align: center;
+  font-size: 9px;
+  margin-left: 41px;
+  margin-top: -14px;
+}
+
+
+/* ----- custom styling ------- */
+.cs-message__content  {
+  background-color: rgb(23, 22, 27);
+  color: white;
+  border: 1px solid yellowgreen;    
+  padding-top: 7px;
+  padding-bottom: 7px;
+  font-family: "Patrick Hand";
+
+}
+
+.cs-message--outgoing .cs-message__content{
+  background-color: rgb(23, 22, 27);
+  color: white;
+  border: 1px solid #fd6363;
+  font-family: "Patrick Hand";
+}
+
+.cs-message-list{
+  font-family: "Patrick Hand";
+  background-color: #1C1B20!important;
+}
+
+.cs-main-container {
+  font-family: "Patrick Hand";
+  border: solid 1px rgb(52 52 54)!important;
+}
+
+.cs-message__html-content{
+text-align: left;
+font-family: "Patrick Hand";
+}
+
+.cs-chat-container .cs-message-input{
+  background-color: #1C1B20;
+  font-family: "Patrick Hand";
+}
+
+.cs-chat-container .cs-message-input{
+  background-color: #1C1B20;
+  font-family: "Patrick Hand";
+}
+
+.cs-message-input__content-editor-wrapper{
+  background-color: #1C1B20;
+  font-family: "Patrick Hand";
+}
+
+.cs-message-input__content-editor{
+  background-color: #1C1B20;
+  color: white;
+  font-family: "Patrick Hand";
+}
+
+.cs-message-input__content-editor[data-placeholder]:empty:before{
+  color: white;
+  font-family: "Patrick Hand";
+}
+
+/* ---- if wallet is not connected ---- */
+
+.banner-img{
+  display: none;
+}
+
+
+@media (max-width:800px){
+  .banner-img{
+      display: block;
+    width: 419px;
+    position: absolute;
+    top: -16px;
+    left: 0;
+  }
+}
+
+.fetchmessages{
+  position: absolute;
+  left: 25px;
+  text-align: start;
+  height: 100vh;
+  /* overflow-y: overlay; */
+  color: #ffffff;
+  overflow-y: scroll;
+  top: 203px;
+}
+
+.NewChat{
+  position: absolute;
+  width: 276px;
+  left: 25px;
+  top: 8rem;
+  color: white;
+}
+
+.user{
+  cursor: pointer;
+  padding-left: 13px;
+  border-radius: 5px;
+  display: flex;
+}
+
+.fetchmessages .user
+{
+  width: 275px;
+}
+.user{
+  border: solid 1px rgb(52 52 54)!important;
+  margin-bottom: 13px;
+}
+.user:hover{
+  background-color: grey;
+}
+
+
+.user p{
+  padding-right: 4rem;
+  padding-left: 10px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.user img{
+  margin-top: 20px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 2rem;
+  border-radius: 10px;
+}
+
+/* Track */
+/* ::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+} */
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #17161B; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ACACBE; 
+   
+}
+
+.ig{
+  margin-top: 12rem;
+}
+a{
+  color: white;
+  display: inline-flex;
+  color: #fb0d52;
+  font-size: 22px;
+  font-weight: bolder;
+}
+
+/* .info{
+  color: white;
+    padding-bottom: 21px;
+    margin-top: -15px;
+    font-size: 10px;
+    font-family: auto;
+} */
+
+.loading{
+  color: white;
+}
+
+.l-loading{
+  text-align: center;
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 13px;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.App {
+  position: relative;
+  left: 23%;
+  top: 6rem;
+}
+@media (max-width: 600px) {
+  .App {
+    left: -26px!important;
+    top: 109px!important;
+  }
+  .fetchmessages,
+  .NewChat {
+    display: none;
+  }
+
+  .fetchmessagesForMob,
+  .NewChatForMob {
+    display: block;
+    z-index: 32!important;
+    background: black!important;
+  }
+  .fetchmessagesForMob {
+    width: 100%;
+    left: 2px!important;
+    top: 257px!important;
+  }
+  .NewChatForMob{
+    width: 100%!important;
+    left: 2px!important;
+    top: 181px!important;
+  }
+
+  .NewChatForMob .user{
+    margin-right: 10px!important;
+    margin-top: 4px!important;
+    display: flex;
+    justify-content: center;
+  }
+
+  .App .Chat_Container {
+    width: 97% !important;
+    height: 75vh !important;
+    margin-left: 33px;
+  }
+  
+}
+
+@media (min-width: 600px) {
+  .Hamburger {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .Hamburger {
+    position: absolute;
+    top: 128px;
+    left: 42%;
+    width: 40px;
+  }
+}
+
+/* ---model--- */
+/* The Modal */
+.modal-box {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Modal Content */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 77%;
+  background-color: #333639;
+  position: relative;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: -6px;
+  right: 26px;
+  font-size: 50px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-content img{
+  margin-left: 31%;
+    width: 36%;
+    border-radius: 13px;
+}

@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chatscope/chat-ui-kit-react": "^1.10.1",
     "@openzeppelin/contracts": "^4.6.0",
     "@openzeppelin/contracts-upgradeable": "^4.6.0",
     "@thirdweb-dev/contracts": "^3",
@@ -17,10 +18,13 @@
     "eslint": "^8.33.0",
     "eslint-plugin-react": "^7.28.0",
     "ethers": "^5.7.2",
+    "firebase": "^9.18.0",
+    "firebase-admin": "^11.5.0",
     "next": "^12.1.6",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "react-toastify": "^9.1.2"
+    "react-toastify": "^9.1.2",
+    "tslib": "^2.5.0"
   },
   "devDependencies": {
     "@types/node": "^17.0.21",

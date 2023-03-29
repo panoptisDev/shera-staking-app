@@ -3,26 +3,85 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import Balanco from "./balance";
-
 import BigNumber from "bignumber.js";
 
-const Landing = () => {
-  const [value, setValue] = useState(new BigNumber(""));
+// import { BigNumber, ethers } from "ethers";
 
+const Landing = () => {
   const copyToClipboard = (text) => {
     navigator.clipboard.writeText(text);
     toast.success("Text copied to clipboard");
   };
+  const [value, setValue] = useState("");
+
   const [model, setmodel] = useState(1);
 
   function SetModel(id) {
     setmodel(id);
   }
 
+  const myInteger = parseInt(value, 10);
   console.log("balance is " + value);
+  console.log("balance in integer is " + myInteger);
+
+  // ----- modal box ----
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleImageLoad = () => {
+    setIsOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsOpen(false);
+  };
+
+  const [inputValue, setInputValue] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [imageSrc, setImageSrc] = useState("");
+
+  const generateImage = async () => {
+    setIsLoading(true);
+    const value = inputValue.trim();
+
+    console.log("input value inside generateImage is " + value);
+
+    const response = await fetch(
+      "https://api-inference.huggingface.co/models/prompthero/openjourney",
+      {
+        headers: {
+          Authorization: "Bearer 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",
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+        body: JSON.stringify({
+          inputs: value,
+        }),
+      }
+    );
+    const blob = await response.blob();
+    // const storageRef = firebase.storage().ref();
+    // const imageRef = storageRef.child(`${Date.now()}.png`);
+    // await imageRef.put(blob);
+    // const imageUrl = await imageRef.getDownloadURL();
+    // const prompt = inputValue.trim();
+    const imageSrc = URL.createObjectURL(blob);
+    setImageSrc(imageSrc);
+    setIsLoading(false);
+    handleImageLoad();
+  };
 
   return (
     <div className="Landing">
+      {isOpen && (
+        <div className="modal-box">
+          <div className="modal-content">
+            <span className="close" onClick={handleCloseModal}>
+              &times;
+            </span>
+            <img src={imageSrc} alt="loading" />
+          </div>
+        </div>
+      )}
       <center>
         <h2 className="shera-text">Create. SHERAAI is that simple</h2>
         <Balanco onValueChange={setValue} />
@@ -32,14 +91,18 @@ const Landing = () => {
         <textarea
           type="text"
           className="search inputField style-qOJRo"
+          value={inputValue}
           placeholder="high quality intricate concept art of the moon (by Akihiko Yoshida)"
+          onChange={(e) => {
+            setInputValue(e.target.value);
+          }}
           id="style-qOJRo"
-          defaultValue={
-            "an ultra detailed matte painting of the quaint mystical city of istanbul, grid shaped city cobblestone streets, fantasy city, light snowfall, wind, inspiring ottoman architecture, ultrawide lense, aerial photography, unreal engine, exquisite detail, 8k, art by greg rutkowski and alphonse mucha\n"
-          }
+          // defaultValue={
+          //   "an ultra detailed matte painting of the quaint mystical city of istanbul, grid shaped city cobblestone streets, fantasy city, light snowfall, wind, inspiring ottoman architecture, ultrawide lense, aerial photography, unreal engine, exquisite detail, 8k, art by greg rutkowski and alphonse mucha\n"
+          // }
         />
         <button className="ripple-button Home_searchButton__RV6Zb sc">
-          <span className="content">
+          <span className="content" onClick={generateImage}>
             <img
               src="https://nowai.ai/_next/image?url=%2Fimagg%2Farrow.png&w=128&q=75"
               width={55}
@@ -50,6 +113,11 @@ const Landing = () => {
           </span>
         </button>
       </div>
+      {isLoading ? (
+        <div className="loading l-loading">Loading... </div>
+      ) : (
+        console.log("Loading is off")
+      )}
 
       <div className="d-flex models">
         <span
@@ -112,7 +180,7 @@ const Landing = () => {
               <div className="Home_card___LpL1  Home_disabled__jP87C">
                 <span
                   className={
-                    !value >= 1000000
+                    myInteger < 1000000
                       ? "disabled_model"
                       : "disabled_model enable_model"
                   }
@@ -143,7 +211,7 @@ const Landing = () => {
               <div className="Home_card___LpL1  Home_disabled__jP87C">
                 <span
                   className={
-                    !value >= 1000000
+                    myInteger < 1000000
                       ? "disabled_model"
                       : "disabled_model enable_model"
                   }
@@ -174,7 +242,7 @@ const Landing = () => {
               <div className="Home_card___LpL1  Home_disabled__jP87C">
                 <span
                   className={
-                    !value >= 1000000
+                    myInteger < 1000000
                       ? "disabled_model"
                       : "disabled_model enable_model"
                   }
@@ -205,7 +273,7 @@ const Landing = () => {
               <div className="Home_card___LpL1  Home_disabled__jP87C">
                 <span
                   className={
-                    !value >= 1000000
+                    myInteger < 1000000
                       ? "disabled_model"
                       : "disabled_model enable_model"
                   }
@@ -236,7 +304,7 @@ const Landing = () => {
               <div className="Home_card___LpL1  Home_disabled__jP87C">
                 <span
                   className={
-                    !value >= 1000000
+                    myInteger < 1000000
                       ? "disabled_model"
                       : "disabled_model enable_model"
                   }
@@ -267,7 +335,7 @@ const Landing = () => {
               <div className="Home_card___LpL1  Home_disabled__jP87C">
                 <span
                   className={
-                    !value > 1000000000000
+                    myInteger < 10000000000
                       ? "disabled_model"
                       : "disabled_model enable_model"
                   }

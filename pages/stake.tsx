@@ -15,12 +15,13 @@ import { ThirdwebSDK } from "@thirdweb-dev/sdk";
 import Link from "next/link";
 import BackIcon from "../public/icons/BackIcon.png";
 import Image from "next/image";
-import Balanco from "./balance";
 import GetTokenId from "./getTokenId";
 
 import { useRef } from "react";
 
 // import { ConnectWallet } from "@thirdweb-dev/react";
+import StakeBalance from "./StakeBalance";
+
 
 const nftDropContractAddress = "0x68225df7c4df4d82ded8478daa74c2138da1f85b";
 
@@ -35,8 +36,12 @@ const Stake: NextPage = () => {
 
   const [selectval, setselectval] = useState<string>("0x68225df7c4df4d82ded8478daa74c2138da1f85b");
 
+  const [value, setValue] = useState("");
+
   const connectWithMetamask = useMetamask();
   const address = useAddress();
+
+  console.log("balance is " + value);
 
   const inputElement = useRef();
 
@@ -267,18 +272,11 @@ const Stake: NextPage = () => {
 
         {!address ? (
           <>
-            {/* <button
-              className={styles.mainButton}
-              id="autom"
-              onClick={connectWithMetamask}
-            >
-              Connect Wallet
-            </button> */}
             <ConnectWallet accentColor="#f213a4" colorMode="dark" />
           </>
         ) : (
           <>
-            <h2>WALLET BALANCE</h2>
+            <h2 className={styles.walletbalance}>WALLET BALANCE</h2>
 
             <div className={styles.tokenGrid}>
               <div className={styles.tokenItem}>
@@ -299,36 +297,45 @@ const Stake: NextPage = () => {
               <div className={styles.tokenItem}>
                 <h3 className={styles.tokenLabel}>Your Shera Balance</h3>
                 <p className={styles.tokenValue}>
+
                   <b>
-                    <Balanco />
+                    <StakeBalance />
                   </b>
                 </p>
               </div>
             </div>
 
-            <button
-              className={`${styles.mainButton} ${styles.spacerTop}`}
-              onClick={() => claimRewards()}
-            >
-              Claim Rewards
-            </button>
+            <div className={styles.buttonContainer}>
+              <button
+                className={`${styles.mainButton} ${styles.spacerTop}`}
+                onClick={() => claimRewards()}
+              >
+                Claim Rewards
+              </button>
+            </div>
 
             <hr className={`${styles.divider} ${styles.spacerTop}`} />
 
-            <h2 className="uc">Your Staked NFTs</h2>
+            <div className={styles.buttonContainer}>
+              <h2 className="uc">Your Staked NFTs</h2>
+            </div>
 
-            <select
-              value={selectval}
-              onChange={(e) => setselectval(e.target.value)}
-              className="select"
-            >
+            <div className={styles.buttonContainer}>
 
-              <option value="0xd8bc0d91c5f0a17dd2c013e9211ff6fe1872e340">Shera Horse</option>
-              <option value="0x551c03246cc1d5e276f2dc264253decfa9b011c6">Shera Cat</option>
-              <option value="0x68225df7c4df4d82ded8478daa74c2138da1f85b">Shera Astra</option>
-              <option value="0xe19351a63a094abfc33d12cd1732f7fdd595b520">Shera Bear</option>
+              <select
+                value={selectval}
+                onChange={(e) => setselectval(e.target.value)}
+                className="select"
+              >
 
-            </select>
+                <option value="0xd8bc0d91c5f0a17dd2c013e9211ff6fe1872e340">Shera Horse</option>
+                <option value="0x551c03246cc1d5e276f2dc264253decfa9b011c6">Shera Cat</option>
+                <option value="0x68225df7c4df4d82ded8478daa74c2138da1f85b">Shera Astra</option>
+                <option value="0xe19351a63a094abfc33d12cd1732f7fdd595b520">Shera Bear</option>
+
+              </select>
+
+            </div>
 
 
             {/* ------   for anstronat ---- */}
