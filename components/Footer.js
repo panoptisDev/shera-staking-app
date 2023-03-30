@@ -5,9 +5,9 @@ export const Footer = () => {
       <div className="Home_footer____T7K row">
         <div className="col-md-4 col-12 text-center">
           <img
-            src="https://nowai.ai/_next/image?url=%2Fimagg%2Ffooter.png&w=1080&q=75"
-            width={449}
-            height={212}
+            src="https://nftify-platform.s3.ap-southeast-1.amazonaws.com/logo/62d170f22994a0bed7213b80-1658926016888.png"
+            width={249}
+            height={112}
             className="Home_footer_logo__vatpM style-Ehorh"
             id="style-Ehorh"
           />

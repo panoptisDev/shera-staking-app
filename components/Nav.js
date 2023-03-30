@@ -1,12 +1,34 @@
 import React, { useState } from "react";
-// import "./navbar.css";
 
-// import { GiHamburgerMenu } from "react-icons/gi";
+import { useRouter } from "next/router";
 
-// import { a } from "react-router-dom";
+import { useAddress } from "@thirdweb-dev/react";
 
 const Navbar = () => {
   const [showMediaIcons, setShowMediaIcons] = useState(false);
+  const router = useRouter();
+
+  function Chatbot() {
+    router.push("/ChatBot");
+  }
+
+  const address = useAddress();
+
+  function home() {
+    router.push("/");
+  }
+
+  function Stake() {
+    router.push("/stake");
+  }
+
+  function Profile() {
+    router.push("/Profile");
+  }
+
+  function LOGIN() {
+    router.push("/Login");
+  }
   return (
     <>
       <nav className="main-nav">
@@ -24,21 +46,34 @@ const Navbar = () => {
             showMediaIcons ? "menu-link mobile-menu-link" : "menu-link"
           }
         >
-          <ul>
+          <ul className="navbar">
             <li>
-              <a href="https://shera-market-nft.com/">Home</a>
+              <button onClick={home}>Home</button>
             </li>
             <li>
-              <a href="https://shera-market-nft.com/discover">Discover</a>
+              <button onClick={Stake}>Stake</button>
             </li>
             <li>
-              <a href="https://shera-market-nft.com/box-event">Mystery boxes</a>
+              <button href="https://shera-market-nft.com/box-event">
+                Mint
+              </button>
             </li>
             <li>
-              <a href="https://shera-market-nft.com/airdrop">Airdrops</a>
+              <button onClick={Chatbot}>ChatBot</button>
             </li>
             <li>
-              <a href="https://shera-market-nft.com/activity">Activity</a>
+              {!address ? (
+                <li className="ant-menu-item blog-btn" tabIndex={-1}>
+                  <span className="loginbtn">
+                    <button
+                      className="ripple-button Home_glow_button__B6_U9 bpm headbtn"
+                      onClick={LOGIN}
+                    >
+                      <span className="m-login-btn">LOGIN</span>
+                    </button>
+                  </span>
+                </li>
+              ) : undefined}
             </li>
           </ul>
         </div>

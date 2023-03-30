@@ -13,7 +13,7 @@ import {
 // import cross from "../public/assets/cross.png";
 // import messageIcon from "../public/assets/message-icon.png";
 
-import plus from "../public/assets/plus.png";
+// import plus from "../public/assets/plus.png";
 
 import { ConnectWallet, useAddress } from "@thirdweb-dev/react";
 
@@ -23,7 +23,9 @@ import "firebase/compat/auth";
 import "firebase/compat/firestore";
 import "firebase/compat/database";
 
-const API_KEY = "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";
+const API_KEY = "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";
+// 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
+// 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
 // "Explain things like you would to a 10 year old learning how to code."
 const systemMessage = {
   //  Explain things like you're talking to a software professional with 5 years of experience.
@@ -37,6 +39,8 @@ function ChatBot() {
 
   const [count, setcount] = useState();
 
+  const [boolcount, setboolcount] = useState(false);
+
   const [messages, setMessages] = useState([
     {
       message: "Hello, I'm Shera AI Bot! Ask me anything!",
@@ -47,7 +51,11 @@ function ChatBot() {
   ]);
 
   function newChat() {
+    setboolcount((boolcount) => {
+      !boolcount;
+    });
     const newMessages = messages;
+    setcount(count + 1);
     database
       .ref("users/" + walletAddress + "/" + "chats" + "/" + "chat" + count)
       .set(newMessages);
@@ -67,10 +75,13 @@ function ChatBot() {
         const messages = snapshot.val();
         {
           messages[1].message ? setcount(count + 1) : setcount(count);
+          console.log(
+            "count is " + count + "message is " + messages[1].message
+          );
         }
       });
     setOpenMenu(false);
-    window.location.reload(false);
+    // window.location.reload(false);
   }
 
   function recoverMessageState(index) {
@@ -96,7 +107,7 @@ function ChatBot() {
         setcount(numOfcount);
         console.log("val is :" + numOfcount);
       });
-  }, []);
+  }, [address, boolcount]);
 
   useEffect(() => {
     const messageArray = [];
@@ -113,19 +124,20 @@ function ChatBot() {
           for (const messageId in chatData) {
             if (chatData[1].message) {
               const chatMessage = chatData[1].message;
-              messageArray.unshift(chatMessage);
+              // messageArray.unshift(chatMessage);
+              messageArray.push(chatMessage);
               console.log("chat messages are " + chatMessage);
               break;
             }
             break;
           }
           // chatMessages.push({ chatId, chatMessage });
-          setfetchmessages(messageArray);
-          console.log("chat messages are ");
         });
       });
+    setfetchmessages(messageArray);
+    console.log("chat messages are ");
     console.log("chat messages are out for each");
-  }, [address]);
+  }, [address, boolcount]);
 
   // useEffect(() => {
   //   console.log("value of count is " + count);
@@ -212,7 +224,7 @@ function ChatBot() {
     // messages is an array of messages
     // Format messages for chatGPT API
     // API is expecting objects in format of { role: "user" or "assistant", "content": "message here"}
-    // So we need to reformat
+    // So we need to reformatq
 
     let apiMessages = chatMessages.map((messageObject) => {
       var role = "";
@@ -300,7 +312,7 @@ function ChatBot() {
       >
         {fetchmessages.map((user, key) =>
           address ? (
-            <code className="user" key={key}>
+            <code className="user fet" key={key}>
               <span>
                 {" "}
                 <img

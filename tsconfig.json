@@ -21,6 +21,6 @@
     "**/*.tsx",
     "pages/mint.jsx",
     "pages/Landing.tsxx"
-  ],
+, "pages/index.js"  ],
   "exclude": ["node_modules"]
 }

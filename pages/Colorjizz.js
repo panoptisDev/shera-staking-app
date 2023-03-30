@@ -22,7 +22,7 @@ firebase.initializeApp(firebaseConfig);
 
 const database = firebase.database();
 
-function Anime() {
+function Colorjizz() {
   const [inputValue, setInputValue] = useState("");
   const [imageSrc, setImageSrc] = useState("");
   const [images, setImages] = useState([]);
@@ -162,4 +162,4 @@ function Anime() {
     </>
   );
 }
-export default Anime;
+export default Colorjizz;

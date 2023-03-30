@@ -10,8 +10,8 @@ import { useContract, useContractRead } from "@thirdweb-dev/react";
 
 
 const Balanco: NextPage = (props: any) => {
-    // const address = useAddress();
-    const address = "0x64387D613e57D20bb4E0E3C33d9b4820C6E3c836";
+    const address = useAddress();
+    // const address = "0x64387D613e57D20bb4E0E3C33d9b4820C6E3c836";
 
     const [claimableRewards, setClaimableRewards] = useState<BigNumber>();
     const { contract } = useContract("0xe2c5fcf777a2b860921116b275951a50e8135eeb");

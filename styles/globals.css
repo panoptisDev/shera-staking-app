@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
 /* Box sizing rules */
 *,
@@ -7,12 +6,19 @@
   box-sizing: border-box;
 }
 
+
+@font-face {
+  font-family:'Adieu' ;
+  src: url(../public/font/Adieu-Regular.ttf);
+}
+
 /* Set core body defaults */
 body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
-  line-height: 1.5;
-  padding-bottom: 250px;
+  /* line-height: 1.5; */
+  font-family:'Adieu'!important;
+  /* padding-bottom: 250px; */
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -53,10 +59,11 @@ h2 {
 
 body{
   /* background-image: url("https://ecocreatures.xyz/wp-content/uploads/2022/10/WhatsApp-Image-2022-10-21-at-1.35.27-AM.png"); */
-  background-image: url("https://nftify-platform.s3.ap-southeast-1.amazonaws.com/banner/62d170f22994a0bed7213b80-1658926123797.jpg");
+  /* background-image: url("https://nftify-platform.s3.ap-southeast-1.amazonaws.com/banner/62d170f22994a0bed7213b80-1658926123797.jpg");
   background-position: center;
   background-repeat: repeat;
-  background-size: cover;
+  background-size: cover; */
+  background-color: #0b0b0b;
   
 }
 
@@ -300,7 +307,7 @@ button {
   color: inherit;
   font-size: 100%;
   line-height: 1.15;
-  font-family: inherit;
+  /* font-family: inherit; */
   margin: 0;
   overflow: visible;
   text-transform: none;
@@ -410,6 +417,7 @@ button,
 .ant-image {
   position: relative;
   display: inline-block;
+  cursor: pointer;
 }
 
 .right > .ant-image {
@@ -539,7 +547,7 @@ input {
   color: inherit;
   font-size: 100%;
   line-height: 1.15;
-  font-family: inherit;
+  /* font-family: inherit; */
   margin: 0;
   overflow: visible;
 }
@@ -831,6 +839,12 @@ input:not([type="range"]) {
   .menu-for-mobile {
     display: none !important;
   }
+  .Airevolution{
+    padding-right: 10%;
+  }
+  .Airevolution .Home_text-home_right__qX0HZ{
+    margin-left: 2%!important;
+  } 
 }
 .main-header {
   position: absolute;
@@ -1474,7 +1488,7 @@ textarea {
 
 
 .material-icons { 
-    font-family: 'Material Icons'; 
+    /* font-family: 'Material Icons';  */
     font-weight: normal; 
     font-style: normal; 
     font-size: 24px; 
@@ -1747,7 +1761,7 @@ textarea {
     -webkit-box-align: center; 
     align-items: center; 
     font-size: 100%; 
-    font-family: inherit; 
+    /* font-family: inherit;  */
     border: 0px; 
     background: inherit;
 } 
@@ -1784,7 +1798,7 @@ textarea {
 } 
 
 .material-icons-outlined { 
-    font-family: 'Material Icons Outlined'; 
+    /* font-family: 'Material Icons Outlined';  */
     font-weight: normal; 
     font-style: normal; 
     font-size: 24px; 
@@ -1946,6 +1960,7 @@ button.Home_searchButton__RV6Zb {
     box-shadow: 0 0 25px 10px #fb0e7240; 
     border-radius: 12px; 
     transition: all .3s;
+    z-index: 0;
 } 
 
 .Home_searchButton__RV6Zb:hover { 
@@ -1958,7 +1973,7 @@ span {
 
 .ripple-button > .content  { 
     position: relative; 
-    z-index: 2;
+    z-index: 0;
 } 
 
 .sc .content  { 
@@ -2021,10 +2036,10 @@ button.Home_searchButton__RV6Zb img  {
 
 
 
-@font-face { 
+/* @font-face { 
   font-family:Adieu;
   src:url(https://nowai.ai/font/Adieu-Regular.ttf);
-} 
+}  */
 
 .Home_main__nLjiQ { 
     display: flex; 
@@ -2249,7 +2264,7 @@ span {
 } 
 
 .Home_cards-title__tUowp { 
-  font-family: Poppins; 
+  /* font-family: Poppins;  */
   font-size: 16px; 
   width: 70%;
 } 
@@ -2258,9 +2273,9 @@ span {
   text-align: center!important;
 } 
 
-.Home_pop__CY3_A { 
+/* .Home_pop__CY3_A { 
   font-family: Poppins;
-} 
+}  */
 
 .mt-3 { 
   margin-top: 1rem!important;
@@ -2490,14 +2505,14 @@ span {
     right: 8px; 
     top: 8px; 
     position: absolute; 
-    font-family: Sk-Modernist; 
+    /* font-family: Sk-Modernist;  */
     display: flex; 
     align-items: center; 
     gap: .2rem;
 } 
 
 [class^="ri-"] { 
-    font-family: remixicon!important; 
+    /* font-family: remixicon!important;  */
     font-style: normal; 
     -webkit-font-smoothing: antialiased; 
     -moz-osx-font-smoothing: grayscale;
@@ -3112,7 +3127,7 @@ span {
 } 
 
 .Home_text_pro__8G_nF { 
-    font-family: Poppins; 
+    /* font-family: Poppins;  */
     font-size: 26px;
 } 
 
@@ -3170,7 +3185,7 @@ span {
     right: 8px; 
     top: 8px; 
     position: absolute; 
-    font-family: Sk-Modernist; 
+    /* font-family: Sk-Modernist;  */
     display: flex; 
     align-items: center; 
     gap: .2rem;
@@ -3376,7 +3391,7 @@ span {
     font-size: 20px; 
     max-width: 80%; 
     margin-top: 25px; 
-    font-family: Poppins;
+    /* font-family: Poppins; */
 } 
 
 .Home_join_title__hBbaj { 
@@ -3389,7 +3404,7 @@ span {
 } 
 
 .Home_b__EFp3k { 
-    font-family: Poppins; 
+    /* font-family: Poppins;  */
     font-weight: 600;
 } 
 
@@ -3468,14 +3483,14 @@ span {
     right: 8px; 
     top: 8px; 
     position: absolute; 
-    font-family: Sk-Modernist; 
+    /* font-family: Sk-Modernist;  */
     display: flex; 
     align-items: center; 
     gap: .2rem;
 } 
 
 [class^="ri-"] { 
-    font-family: remixicon!important; 
+    /* font-family: remixicon!important;  */
     font-style: normal; 
     -webkit-font-smoothing: antialiased; 
     -moz-osx-font-smoothing: grayscale;
@@ -3634,7 +3649,22 @@ span {
   .Home_child_title__VSGqN { 
     padding:  0 20px;
     max-width: 100%;
+  }
+  .ul-l{
+    margin-left: 19px;
   } 
+  .bpm{
+    margin-left: 4rem!important;
+  }
+  .bpm .content{
+    font-size: 14px;
+  }
+  .Home_card_gray__QEpOT{
+    margin-left: 4%!important;
+  }
+  .promembership .Home_center__4BFgC{
+    padding-right: 3%!important;
+  }
 }     
 
 @media (max-width: 950px){ 
@@ -3874,7 +3904,7 @@ button.Home_glow_button__B6_U9:hover {
     font-size: 20px; 
     max-width: 80%; 
     margin-top: 25px; 
-    font-family: Poppins;
+    /* font-family: Poppins; */
 } 
 
 .ctx { 
@@ -3886,7 +3916,7 @@ span {
 } 
 
 .Home_b__EFp3k { 
-    font-family: Poppins; 
+    /* font-family: Poppins;  */
     font-weight: 600;
 } 
 
@@ -3928,7 +3958,7 @@ h1 {
 
 .Home_contract__MdAqV { 
     font-size: 18px; 
-    font-family: Sk-Modernist; 
+    /* font-family: Sk-Modernist;  */
     background: linear-gradient(115.57deg,rgba(0,45,98,.105) 20.62%,rgba(0,45,98,.075) 52.46%,rgba(251,14,95,.15) 82.89%),hsla(0,0%,100%,.03); 
     padding: 13px 15px; 
     border-radius: 12px; 
@@ -4264,10 +4294,11 @@ button.Home_glow_button__B6_U9:hover {
 } 
 
 .Home_child_title__VSGqN { 
-    font-size: 20px; 
-    max-width: 80%; 
-    margin-top: 25px; 
-    font-family: Poppins;
+  font-size: 20px;
+  max-width: 95%;
+  font-weight: 100;
+  margin-top: 25px;
+    /* font-family: Poppins; */
 } 
 
 .Home_sec1__XihOH div .Home_x__EBJZB { 
@@ -4299,7 +4330,7 @@ span {
 
 .stake .titles  { 
     color: #d5d5d5; 
-    font-family: Poppins;
+    /* font-family: Poppins; */
 } 
 
 .Home_join_title__hBbaj { 
@@ -4321,7 +4352,7 @@ span {
 } 
 
 .Home_b__EFp3k { 
-    font-family: Poppins; 
+    /* font-family: Poppins;  */
     font-weight: 600;
 } 
 
@@ -4450,7 +4481,8 @@ span {
     font-size: 18px; 
     align-self: start; 
     gap: 2rem;
-    padding-left: 5.5rem;
+    /* padding-left: 5.5rem; */
+    justify-content: center;
 } 
 
 
@@ -4488,6 +4520,7 @@ span {
   padding-top: 7rem;
   color: white;
   font-size: 37px;
+  text-transform: uppercase;
   font-weight: bolder;
 } 
 
@@ -4522,6 +4555,7 @@ span {
 .promembership .Home_center__4BFgC{
   padding-left: 11%;
   color: white;
+  padding-right: 16%;
 }
 
 .promembership .Home_center__4BFgC .flex-column img{
@@ -4563,7 +4597,8 @@ span {
     display: none;
   }
   .shera-text {
-    padding-top: 0rem;
+    padding-top: 3rem;
+    font-size: 28px;
   }
   .models {
     justify-content: center;
@@ -4591,7 +4626,7 @@ span {
   padding-left: 0;
 }
 #style-UNPin{
-  width: 248px;
+  width: 585px;
 }
 .Home_cards-title__tUowp{
   margin-left: -12px;
@@ -4742,7 +4777,7 @@ body {
 } 
 
 .footer .Home_footer_logo__vatpM { 
-    width: 180px; 
+    width: 118px; 
     height: auto;
 } 
 
@@ -5043,7 +5078,7 @@ span {
   width: 300px;
 }
 .custom-search-input {
-  width: 115%;
+  width: 130%;
   border: 1px solid #ccc;
   border-radius: 100px;
   padding: 10px 100px 10px 20px; 
@@ -5053,7 +5088,7 @@ span {
 }
 .custom-search-botton {
   position: absolute;
-  right: -38px; 
+  right: -85px; 
   top: 3px;
   bottom: 3px;
   border: 0;
@@ -5089,7 +5124,7 @@ span {
 .info{
   text-align: center;
   font-size: 9px;
-  margin-left: 41px;
+  margin-left: 90px;
   margin-top: -14px;
 }
 
@@ -5101,7 +5136,7 @@ span {
   border: 1px solid yellowgreen;    
   padding-top: 7px;
   padding-bottom: 7px;
-  font-family: "Patrick Hand";
+  font-family:'Adieu' ;
 
 }
 
@@ -5109,48 +5144,52 @@ span {
   background-color: rgb(23, 22, 27);
   color: white;
   border: 1px solid #fd6363;
-  font-family: "Patrick Hand";
+  font-family:'Adieu' ;
 }
 
 .cs-message-list{
-  font-family: "Patrick Hand";
-  background-color: #1C1B20!important;
+  font-family:'Adieu' ;
+  background-color: #0b0b0b!important;
 }
 
 .cs-main-container {
-  font-family: "Patrick Hand";
+  font-family:'Adieu' ;
   border: solid 1px rgb(52 52 54)!important;
 }
 
 .cs-message__html-content{
 text-align: left;
-font-family: "Patrick Hand";
+font-family:'Adieu' ;
 }
 
 .cs-chat-container .cs-message-input{
   background-color: #1C1B20;
-  font-family: "Patrick Hand";
+  font-family:'Adieu' ;
 }
 
 .cs-chat-container .cs-message-input{
   background-color: #1C1B20;
-  font-family: "Patrick Hand";
+  font-family:'Adieu' ;
 }
 
 .cs-message-input__content-editor-wrapper{
   background-color: #1C1B20;
-  font-family: "Patrick Hand";
+ 
+  font-family:'Adieu' ;
+
 }
 
 .cs-message-input__content-editor{
   background-color: #1C1B20;
   color: white;
-  font-family: "Patrick Hand";
+  font-family:'Adieu' ;
+
 }
 
 .cs-message-input__content-editor[data-placeholder]:empty:before{
   color: white;
-  font-family: "Patrick Hand";
+  font-family:'Adieu' ;
+
 }
 
 /* ---- if wallet is not connected ---- */
@@ -5168,24 +5207,27 @@ font-family: "Patrick Hand";
     top: -16px;
     left: 0;
   }
+  .custom-search{
+    left: 38%;
+  }
 }
 
 .fetchmessages{
   position: absolute;
   left: 25px;
   text-align: start;
-  height: 100vh;
+  height: 70vh;
   /* overflow-y: overlay; */
   color: #ffffff;
   overflow-y: scroll;
-  top: 203px;
+  top: 170px;
 }
 
 .NewChat{
   position: absolute;
   width: 276px;
   left: 25px;
-  top: 8rem;
+  top: 6rem;
   color: white;
 }
 
@@ -5219,7 +5261,9 @@ font-family: "Patrick Hand";
 .user img{
   margin-top: 20px;
 }
-
+.fet img{
+  margin-top: 13px;
+}
 ::-webkit-scrollbar {
   width: 10px;
   height: 2rem;
@@ -5263,6 +5307,7 @@ a{
 
 .loading{
   color: white;
+  text-align: center;
 }
 
 .l-loading{
@@ -5352,6 +5397,9 @@ a{
     left: 42%;
     width: 40px;
   }
+  .user{
+    margin-bottom: 17px;
+  }
 }
 
 /* ---model--- */
@@ -5373,11 +5421,13 @@ a{
 .modal-content {
   margin: auto;
   display: block;
-  width: 77%;
-  background-color: #333639;
+  width: 80%;
+  /* background: aqua; */
   position: relative;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 4px;
+  height: 70vh;
+  background-color: #121212;
 }
 
 /* Close Button */
@@ -5386,7 +5436,7 @@ a{
   position: absolute;
   top: -6px;
   right: 26px;
-  font-size: 50px;
+  font-size: 40px;
   font-weight: bold;
   cursor: pointer;
 }
@@ -5401,5 +5451,98 @@ a{
 .modal-content img{
   margin-left: 31%;
     width: 36%;
-    border-radius: 13px;
+    border-radius: 6px;
+    /* margin-top: 2%; */
+}
+.image-detail{
+  font-weight: bolder;
+}
+
+.basic-model{
+  position: absolute;
+    right: 36px;
+    bottom: 20px;
+}
+
+@media (max-width : 600px){
+
+  .modal-box {
+    padding-top: 48px;
+}
+.modal-content{
+  height: 44vh;
+}
+.modal-content img{
+  margin-left: 9%;
+  width: 82%;
+  margin-top: 11%;
+}
+.fl{
+  margin-left: 19px;
+}
+.info{
+  margin-left: -4px;
+}
+}
+
+.balanceCo{
+  display: none;
+}
+
+.ant-menu-title-content button{
+  background: none;
+  color: grey;
+}
+
+@media (min-width:850px){
+  .cs-main-container{
+    height: 90%!important;
+  }
+}
+
+.cs-chat-container .cs-message-input{
+  background: #1C1B20!important;
+}
+
+@media (min-width:850px) {
+  h3{
+    font-size: 12px;
+  }
+  .gtd{
+    font-size: 15px!important;
+  }
+  
+}
+.cs-message-input__content-editor-wrapper {
+  background-color: #1C1B20!important;
+}
+
+.cs-message-input__content-editor-container{
+  background-color: #1C1B20!important;
+}
+.cs-message-input__content-editor{
+  background-color: #1C1B20!important;
+}
+.cs-message-input__content-editor{
+  color: white!important;
+}
+.cs-message-input__content-editor[data-placeholder]:empty:before{
+  color: white!important;
+}
+
+
+.headbtn{
+  font-size: 13px!important;
+}
+
+.navbar li button{
+  background: none;
+}
+
+.blog-btn{
+  margin-left: -19px;
+}
+
+.m-login-btn{
+  font-size: 19px;
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import { useRouter } from "next/router";
+import { useAddress } from "@thirdweb-dev/react";
 
 import Navbar from "./Nav";
 
@@ -9,6 +10,23 @@ export const Header = () => {
     router.push("/ChatBot");
   }
 
+  const address = useAddress();
+
+  function home() {
+    router.push("/");
+  }
+
+  function Stake() {
+    router.push("/stake");
+  }
+
+  function Profile() {
+    router.push("/Profile");
+  }
+
+  function LOGIN() {
+    router.push("/Login");
+  }
   return (
     <>
       <div className="main-header">
@@ -54,16 +72,16 @@ export const Header = () => {
               >
                 <li className="ant-menu-item" tabIndex={-1}>
                   <span className="ant-menu-title-content">
-                    <a className="active" href="https://shera-market-nft.com/">
+                    <button className="active" onClick={home}>
                       <div>Home</div>
-                    </a>
+                    </button>
                   </span>
                 </li>
                 <li className="ant-menu-item" tabIndex={-1}>
                   <span className="ant-menu-title-content">
-                    <a className href="https://shera-market-nft.com/discover">
-                      <div>Discover</div>
-                    </a>
+                    <button className onClick={Stake}>
+                      <div>Stake</div>
+                    </button>
                   </span>
                 </li>
                 <li className="ant-menu-item" tabIndex={-1}>
@@ -76,38 +94,35 @@ export const Header = () => {
 
                 <li className="ant-menu-item" tabIndex={-1}>
                   <span className="ant-menu-title-content">
-                    <a className href="https://shera-market-nft.com/activity">
-                      <div>Activity</div>
-                    </a>
+                    <button className onClick={Chatbot}>
+                      <div>ChatBot</div>
+                    </button>
                   </span>
                 </li>
-                {/* <li className="ant-menu-item" tabIndex={-1}>
-                  <span className="ant-menu-title-content">
-                    <a className href="https://shera-market-nft.com/airdrop">
-                      <div>
-                        Airdrops
-                      </div>
-                    </a>
-                  </span>
-                </li> */}
-                {/* <li className="ant-menu-item" tabIndex={-1}>
-                  <span className="ant-menu-title-content">
-                    <div className onClick={Chatbot}>
-                      <div className="chatbtn">ChatBot</div>
-                    </div>
-                  </span>
-                </li> */}
+
+                {!address ? (
+                  <li className="ant-menu-item" tabIndex={-1}>
+                    <span className="loginbtn">
+                      <button
+                        className="ripple-button Home_glow_button__B6_U9 bpm headbtn"
+                        onClick={LOGIN}
+                      >
+                        <span className="">LOGIN</span>
+                      </button>
+                    </span>
+                  </li>
+                ) : undefined}
               </ul>
               <div style={{ display: "none" }}></div>
-              {/* <button color="var(--color_button_main_text)" background="var(--color_button_main_bg)" type="button" className="ant-btn dEQEDw theme-btn">
-              <span className>
-                Connect Wallet
-              </span>
-            </button> */}
-              <div className="ant-image" style={{ width: "40px" }}>
+
+              <div
+                className="ant-image"
+                style={{ width: "50px" }}
+                onClick={Profile}
+              >
                 <img
                   className="ant-image-img snipcss0-4-39-40"
-                  src="https://shera-market-nft.com/_next/static/images/binance_logo-06395e34944f26ef3017d573cb53bcf1.svg"
+                  src="https://media.architecturaldigest.com/photos/5f241de2c850b2a36b415024/master/w_1600%2Cc_limit/Luke-logo.png"
                 />
               </div>
             </div>

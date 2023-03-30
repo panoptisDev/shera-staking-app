@@ -22,7 +22,7 @@ firebase.initializeApp(firebaseConfig);
 
 const database = firebase.database();
 
-function Anime() {
+function Woolitize() {
   const [inputValue, setInputValue] = useState("");
   const [imageSrc, setImageSrc] = useState("");
   const [images, setImages] = useState([]);
@@ -54,7 +54,7 @@ function Anime() {
     console.log("input value inside generateImage is " + value);
 
     const response = await fetch(
-      "https://api-inference.huggingface.co/models/prompthero/openjourney",
+      "https://api-inference.huggingface.co/models/plasmo/woolitize",
       {
         headers: {
           Authorization: "Bearer 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",
@@ -162,4 +162,4 @@ function Anime() {
     </>
   );
 }
-export default Anime;
+export default Woolitize;

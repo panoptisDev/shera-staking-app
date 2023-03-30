@@ -5,6 +5,8 @@ import "react-toastify/dist/ReactToastify.css";
 import Balanco from "./balance";
 import BigNumber from "bignumber.js";
 
+import { useRouter } from "next/router";
+
 // import { BigNumber, ethers } from "ethers";
 
 const Landing = () => {
@@ -12,6 +14,9 @@ const Landing = () => {
     navigator.clipboard.writeText(text);
     toast.success("Text copied to clipboard");
   };
+
+  const router = useRouter();
+
   const [value, setValue] = useState("");
 
   const [model, setmodel] = useState(1);
@@ -75,10 +80,12 @@ const Landing = () => {
       {isOpen && (
         <div className="modal-box">
           <div className="modal-content">
+            <div className="image-detail">Image Details</div>
             <span className="close" onClick={handleCloseModal}>
               &times;
             </span>
             <img src={imageSrc} alt="loading" />
+            <div className="image-detail basic-model">Basic Model</div>
           </div>
         </div>
       )}
@@ -184,6 +191,13 @@ const Landing = () => {
                       ? "disabled_model"
                       : "disabled_model enable_model"
                   }
+                  onClick={
+                    myInteger >= 1000000
+                      ? () => {
+                          router.push("/Anime");
+                        }
+                      : undefined // Or null, depending on your preference
+                  }
                 >
                   <span>
                     Hold 10M $SHERAAI
@@ -246,6 +260,13 @@ const Landing = () => {
                       ? "disabled_model"
                       : "disabled_model enable_model"
                   }
+                  onClick={
+                    myInteger >= 1000000
+                      ? () => {
+                          router.push("/Realism");
+                        }
+                      : undefined // Or null, depending on your preference
+                  }
                 >
                   <span>
                     Hold 10M $SHERAAI
@@ -276,6 +297,13 @@ const Landing = () => {
                     myInteger < 1000000
                       ? "disabled_model"
                       : "disabled_model enable_model"
+                  }
+                  onClick={
+                    myInteger >= 1000000
+                      ? () => {
+                          router.push("/Anime");
+                        }
+                      : undefined // Or null, depending on your preference
                   }
                 >
                   <span>
@@ -308,6 +336,13 @@ const Landing = () => {
                       ? "disabled_model"
                       : "disabled_model enable_model"
                   }
+                  onClick={
+                    myInteger >= 1000000
+                      ? () => {
+                          router.push("/Anime");
+                        }
+                      : undefined // Or null, depending on your preference
+                  }
                 >
                   <span>
                     Hold 30M $SHERAAI
@@ -338,6 +373,13 @@ const Landing = () => {
                     myInteger < 10000000000
                       ? "disabled_model"
                       : "disabled_model enable_model"
+                  }
+                  onClick={
+                    myInteger >= 1000000
+                      ? () => {
+                          router.push("/Anime");
+                        }
+                      : undefined // Or null, depending on your preference
                   }
                 >
                   <span>
@@ -1426,7 +1468,7 @@ const Landing = () => {
         <div className="Home_center__4BFgC">
           <div className="d-flex flex-column align-items-center">
             <img
-              src="https://nowai.ai/_next/image?url=%2Fimagg%2Fgelang.png&w=1920&q=75"
+              src="https://academy-public.coinmarketcap.com/srd-optimized-uploads/7069c272f2674cdca227c22283e9b908.jpeg"
               width={710}
               height={540}
               className="style-iJjRK"
@@ -1502,7 +1544,7 @@ const Landing = () => {
             id="style-UNPin"
           />
           <div className="Home_text-home_right__qX0HZ ctx">
-            <div className="Home_title__T09hD">
+            <div className="Home_title__T09hD fl">
               Be at the frontline of the AI revolution
             </div>
             <div className="Home_child_title__VSGqN">
@@ -1574,15 +1616,13 @@ const Landing = () => {
         </div>
       </div>
 
-      <div className="percentage">
+      {/* <div className="percentage">
         <div
           id="mouse-parallax-container"
           className="Home_center__4BFgC style-m2niV"
         >
           <div className="ctr">
-            {/* <div>
-                            $NOWAI Token
-                        </div> */}
+            
             <div className="Home_child_title__VSGqN">
               Join SHERAAI's thriving worldwide community and secure your
               ownership in the future of AI by holding $SHERAAI
@@ -1626,7 +1666,8 @@ const Landing = () => {
             />
           </div>
         </div>
-      </div>
+      </div> */}
+
       <div className="stake">
         <div className="Home_center__4BFgC">
           <div className="Home_card-gray__p59aP d-flex gap-5 px-3 py-3 flex-column stake">
