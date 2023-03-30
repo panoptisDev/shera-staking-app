@@ -51,9 +51,8 @@ function ChatBot() {
   ]);
 
   function newChat() {
-    setboolcount((boolcount) => {
-      !boolcount;
-    });
+    setboolcount((prevState) => !prevState);
+
     const newMessages = messages;
     setcount(count + 1);
     database
