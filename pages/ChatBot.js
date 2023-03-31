@@ -23,7 +23,7 @@ import "firebase/compat/auth";
 import "firebase/compat/firestore";
 import "firebase/compat/database";
 
-const API_KEY = "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";
+const API_KEY = "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";
 // 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
 // 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
 // "Explain things like you would to a 10 year old learning how to code."
