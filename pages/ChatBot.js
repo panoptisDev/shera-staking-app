@@ -320,7 +320,10 @@ function ChatBot() {
                   width={20}
                 />{" "}
               </span>{" "}
-              <p onClick={() => recoverMessageState(key)}> {user} </p>
+              <p onClick={() => recoverMessageState(key)}>
+                {" "}
+                {user.slice(0, 20) + "..."}{" "}
+              </p>
             </code>
           ) : (
             console.log("wallet is not cannected")

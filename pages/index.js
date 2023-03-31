@@ -209,8 +209,8 @@ const Landing = () => {
           <span
             className={
               model == 3
-                ? "Home_selected__nlXOJ Home_option__QMUcQ d-n"
-                : "Home_option__QMUcQ d-n"
+                ? "Home_selected__nlXOJ Home_option__QMUcQ d-n gallery-text"
+                : "Home_option__QMUcQ d-n gallery-text"
             }
             onClick={() => {
               SetModel(3);

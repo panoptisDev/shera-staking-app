@@ -984,7 +984,7 @@ input:not([type="range"]) {
     background-color: #0b0b0b;
     height: 20rem;
     display: grid;
-    grid-column: 1/5;
+    grid-column: 1/8;
     align-items: center;
     padding-left: 0;
     transition: all 2s linear;
@@ -999,7 +999,8 @@ input:not([type="range"]) {
     justify-content: space-around;
     flex-direction: column;
     align-items: start;
-    width: 45vh;
+    /* width: 45vh; */
+    padding-left: 7px;
   }
 
   .mobile-menu-link ul li:first-child {
@@ -1058,13 +1059,13 @@ input:not([type="range"]) {
 
 @media (max-width: 520px) {
   .main-nav {
-    height: 6rem;
+    height: 4rem;
     grid-template-columns: 1rem 4fr 1fr 1fr 1rem;
   }
 
   .logo,
   .social-media ul {
-    height: 6rem;
+    height: 4rem;
   }
 
   .logo h2 {
@@ -1081,6 +1082,9 @@ input:not([type="range"]) {
   .social-media .hamburger-menu {
     display: block;
     font-size: 2.5rem;
+  }
+  .hamburger-menu{
+    margin-top: -2rem;
   }
 }
 
@@ -4274,13 +4278,13 @@ button {
 } 
 
 button.Home_glow_button__B6_U9 { 
-    padding: 8px 25px; 
-    font-size: 22px; 
-    box-shadow: 0 0 25px 10px #fb0e7270; 
-    border-radius: 18px; 
-    background: linear-gradient(90deg,#fb0e72 50%,#fff 0) 0; 
-    background-size: 200%; 
-    transition: .25s ease-out;
+  padding: 8px 25px;
+  font-size: 22px;
+  box-shadow: 0 0 25px 10px #af7f1b61;
+  border-radius: 18px;
+  background: #c19436;
+  background-size: 200%;
+  transition: .25s ease-out;
 } 
 
 button.Home_glow_button__B6_U9:hover { 
@@ -4589,10 +4593,8 @@ span {
   padding-right: 5%;
 }
 
+
 @media (max-width:600px){
-  .Gallery{
-      display: none;
-  }
   .d-n{
     display: none;
   }
@@ -5345,7 +5347,7 @@ a{
 @media (max-width: 600px) {
   .App {
     left: -26px!important;
-    top: 109px!important;
+    top: 85px!important;
   }
   .fetchmessages,
   .NewChat {
@@ -5361,12 +5363,12 @@ a{
   .fetchmessagesForMob {
     width: 100%;
     left: 2px!important;
-    top: 257px!important;
+    top: 224px!important;
   }
   .NewChatForMob{
     width: 100%!important;
     left: 2px!important;
-    top: 181px!important;
+    top: 147px!important;
   }
 
   .NewChatForMob .user{
@@ -5393,7 +5395,7 @@ a{
 @media (max-width: 600px) {
   .Hamburger {
     position: absolute;
-    top: 128px;
+    top: 88px;
     left: 42%;
     width: 40px;
   }
@@ -5537,6 +5539,7 @@ a{
 
 .navbar li button{
   background: none;
+  font-size: 16px;
 }
 
 .blog-btn{
@@ -5545,4 +5548,21 @@ a{
 
 .m-login-btn{
   font-size: 19px;
+}
+
+.Gallery{
+  display: none;
+}
+.gallery-text{
+display: none;
+}
+
+@media (max-width:600px) {
+  .m-login-btn{
+    font-size: 9px;
+  }
+  .Landing {
+      background-color: #000000!important;
+      margin-top: -21px;
+  }
 }
