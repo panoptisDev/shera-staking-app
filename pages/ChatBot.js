@@ -23,7 +23,7 @@ import "firebase/compat/auth";
 import "firebase/compat/firestore";
 import "firebase/compat/database";
 
-const API_KEY = "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";
+const API_KEY = "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";
 // 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
 // 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
 // "Explain things like you would to a 10 year old learning how to code."
@@ -51,7 +51,7 @@ function ChatBot() {
   ]);
 
   function newChat() {
-    setboolcount((prevState) => !prevState);
+    // setboolcount((prevState) => !prevState);
 
     const newMessages = messages;
     setcount(count + 1);
